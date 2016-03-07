@@ -1,0 +1,33 @@
+c:\users\виктор\documents\visual studio 2013\Projects\AC Milan\AC Milan\bin\Debug\AC Milan.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\AC Milan\AC Milan\bin\Debug\AC Milan.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\AC Milan\AC Milan\bin\Debug\AC Milan.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\AC Milan\AC Milan\obj\Debug\AC_Milan.MainForm.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\AC Milan\AC Milan\obj\Debug\AC_Milan.Properties.Resources.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\AC Milan\AC Milan\obj\Debug\AC Milan.csproj.GenerateResource.Cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\AC Milan\AC Milan\obj\Debug\AC Milan.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\AC Milan\AC Milan\obj\Debug\AC Milan.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\AC Milan\AC Milan\obj\Debug\AC_Milan.PlayersForm.resources
+C:\Users\Виктор\documents\visual studio 2013\Projects\AC Milan\AC Milan\obj\Debug\AC_Milan.PlayerProfileForm.resources
+C:\Users\Виктор\documents\visual studio 2013\Projects\AC Milan\AC Milan\obj\Debug\AC_Milan.GoalkeeperStatsForm.resources
+C:\Users\Виктор\documents\visual studio 2013\Projects\AC Milan\AC Milan\obj\Debug\AC_Milan.OutfieldPlayerStatsForm.resources
+C:\Users\Виктор\documents\visual studio 2013\Projects\AC Milan\AC Milan\obj\Debug\AC Milan.csprojResolveAssemblyReference.cache
+C:\tasks\AC Milan\AC Milan\bin\Debug\AC Milan.exe.config
+C:\tasks\AC Milan\AC Milan\obj\Debug\AC Milan.exe
+C:\tasks\AC Milan\AC Milan\obj\Debug\AC Milan.pdb
+C:\tasks\AC Milan\AC Milan\bin\Debug\AC Milan.exe
+C:\tasks\AC Milan\AC Milan\bin\Debug\AC Milan.pdb
+C:\tasks\AC Milan\AC Milan\bin\Debug\mscorlib.dll
+C:\tasks\AC Milan\AC Milan\bin\Debug\ru\mscorlib.resources.dll
+C:\tasks\AC Milan\AC Milan\bin\Debug\normidna.nlp
+C:\tasks\AC Milan\AC Milan\bin\Debug\normnfc.nlp
+C:\tasks\AC Milan\AC Milan\bin\Debug\normnfd.nlp
+C:\tasks\AC Milan\AC Milan\bin\Debug\normnfkc.nlp
+C:\tasks\AC Milan\AC Milan\bin\Debug\normnfkd.nlp
+C:\tasks\AC Milan\AC Milan\obj\Debug\AC Milan.csprojResolveAssemblyReference.cache
+C:\tasks\AC Milan\AC Milan\obj\Debug\AC_Milan.GoalkeeperStatsForm.resources
+C:\tasks\AC Milan\AC Milan\obj\Debug\AC_Milan.OutfieldPlayerStatsForm.resources
+C:\tasks\AC Milan\AC Milan\obj\Debug\AC_Milan.PlayerProfileForm.resources
+C:\tasks\AC Milan\AC Milan\obj\Debug\AC_Milan.MainForm.resources
+C:\tasks\AC Milan\AC Milan\obj\Debug\AC_Milan.PlayersForm.resources
+C:\tasks\AC Milan\AC Milan\obj\Debug\AC_Milan.Properties.Resources.resources
+C:\tasks\AC Milan\AC Milan\obj\Debug\AC Milan.csproj.GenerateResource.Cache

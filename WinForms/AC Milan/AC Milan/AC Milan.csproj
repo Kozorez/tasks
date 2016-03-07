@@ -1,0 +1,746 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADD60B87-C2D4-4239-AC9D-D80E361791C9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AC_Milan</RootNamespace>
+    <AssemblyName>AC Milan</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GoalkeeperStatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoalkeeperStatsForm.Designer.cs">
+      <DependentUpon>GoalkeeperStatsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OutfieldPlayerStatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OutfieldPlayerStatsForm.Designer.cs">
+      <DependentUpon>OutfieldPlayerStatsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayerProfileForm.Designer.cs">
+      <DependentUpon>PlayerProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlayersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlayersForm.Designer.cs">
+      <DependentUpon>PlayersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GoalkeeperStatsForm.resx">
+      <DependentUpon>GoalkeeperStatsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OutfieldPlayerStatsForm.resx">
+      <DependentUpon>OutfieldPlayerStatsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayerProfileForm.resx">
+      <DependentUpon>PlayerProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlayersForm.resx">
+      <DependentUpon>PlayersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jersey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goalkeepers.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\defenders.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\midfielders.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forwards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largebrazil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largecolombia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largefrance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largeitaly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largejapan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largenetherlands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largespain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallargentina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallbrazil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallcolombia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallfrance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallitaly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smalljapan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallnetherlands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallspain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largezapata.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largematri.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largeagazzi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largesuso.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largedesciglio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largepoli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largemontolivo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largeantonelli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largeabate.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largealex.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largebonaventura.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largepaletta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largelopez.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largecerci.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largemenez.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largehonda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largeelshaarawy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largebacca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largeverdi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largenocerino.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largezaccardo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largealbertazzi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largeabbiati.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largedonnarumma.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largeniang.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largegabriel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acmilanlogo.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largebrazil1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largebrazil.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largecolombia.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largefrance.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largeitaly.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largejapan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largenetherlands.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largespain.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largebrazil1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largemauri.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largebertolacci.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largedejong.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largeadriano.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largeely.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acmilanicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sansiro.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvalueniang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetableniang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionniang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluedonnarumma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluelopez.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluegabriel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvalueabbiati.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvalueagazzi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvalueabate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluealbertazzi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluealex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvalueantonelli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluedesciglio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvalueely.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluepaletta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluezaccardo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluezapata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluebertolacci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluebonaventura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluedejong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvalueelshaarawy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluehonda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluemauri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluemontolivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluenocerino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluepoli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluesuso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvalueverdi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvalueadriano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluebacca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluecerci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluematri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluemenez.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetableabbiati.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetableagazzi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetabledonnarumma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablegabriel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablelopez.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetableabate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablealbertazzi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablealex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetableantonelli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetabledesciglio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetableely.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablepaletta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablezaccardo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablezapata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablebertolacci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablebonaventura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetabledejong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetableelshaarawy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablehonda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablemauri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablemontolivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablenocerino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablepoli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablesuso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetableverdi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetableadriano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablebacca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablecerci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablematri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablemenez.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionadriano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionbacca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positioncerci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionmatri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionmenez.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionabbiati.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionagazzi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positiondonnarumma.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positiongabriel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionlopez.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionalex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionpaletta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionely.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionzaccardo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionzapata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionalbertazzi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionantonelli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionabate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positiondesciglio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionhonda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionsuso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positiondejong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionbonaventura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionbertolacci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionpoli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionmauri.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionmontolivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionnocerino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionverdi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionelshaarawy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largemexes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluemexes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablemexes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionmexes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallalbertazzi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallelshaarawy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallverdi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallgabriel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largecalabria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluecalabria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablecalabria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positioncalabria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largeromagnoli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvalueromagnoli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetableromagnoli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionromagnoli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallabate.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallabbiati.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smalladriano.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallagazzi.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallalex.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallantonelli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallbacca.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallbertolacci.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallbonaventura.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallcalabria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallcerci.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smalldejong.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smalldesciglio.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smalldonnarumma.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallely.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallhonda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smalllopez.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallmatri.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallmauri.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallmenez.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallmexes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallmontolivo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallniang.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallnocerino.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallpaletta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallpoli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallromagnoli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallsuso.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallzaccardo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallzapata.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smallbalotelli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\largebalotelli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluebalotelli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\positionbalotelli.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marketvaluetablebalotelli.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

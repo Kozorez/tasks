@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="acmilanicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acmilanicon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="acmilanlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\acmilanlogo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="defenders" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\defenders.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="forwards" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\forwards.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="goalkeepers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\goalkeepers.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largeabate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largeabate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largeabbiati" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largeabbiati.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largeadriano" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largeadriano.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largealex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largealex.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largeantonelli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largeantonelli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largebacca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largebacca.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largebalotelli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largebalotelli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largebertolacci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largebertolacci.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largebonaventura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largebonaventura.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largebrazil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largebrazil.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largecalabria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largecalabria.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largecerci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largecerci.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largecolombia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largecolombia.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largedejong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largedejong.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largedesciglio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largedesciglio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largedonnarumma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largedonnarumma.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largeely" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largeely.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largefrance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largefrance.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largehonda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largehonda.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largeitaly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largeitaly.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largejapan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largejapan.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largelopez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largelopez.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largemauri" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largemauri.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largemenez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largemenez.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largemexes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largemexes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largemontolivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largemontolivo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largenetherlands" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largenetherlands.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largeniang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largeniang.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largenocerino" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largenocerino.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largepoli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largepoli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largeromagnoli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largeromagnoli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largespain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largespain.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largesuso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largesuso.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="largezapata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largezapata.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvalueabate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvalueabate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvalueabbiati" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvalueabbiati.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvalueadriano" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvalueadriano.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluealex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluealex.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvalueantonelli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvalueantonelli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluebacca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluebacca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluebalotelli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluebalotelli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluebertolacci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluebertolacci.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluebonaventura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluebonaventura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluecalabria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluecalabria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluecerci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluecerci.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluedejong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluedejong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluedesciglio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluedesciglio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluedonnarumma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluedonnarumma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvalueely" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvalueely.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluehonda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluehonda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluelopez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluelopez.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluemauri" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluemauri.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluemenez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluemenez.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluemexes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluemexes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluemontolivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluemontolivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvalueniang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvalueniang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluenocerino" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluenocerino.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluepoli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluepoli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvalueromagnoli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvalueromagnoli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluesuso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluesuso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetableabate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetableabate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetableabbiati" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetableabbiati.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetableadriano" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetableadriano.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablealex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablealex.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetableantonelli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetableantonelli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablebacca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablebacca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablebalotelli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablebalotelli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablebertolacci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablebertolacci.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablebonaventura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablebonaventura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablecalabria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablecalabria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablecerci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablecerci.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetabledejong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetabledejong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetabledesciglio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetabledesciglio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetabledonnarumma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetabledonnarumma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetableely" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetableely.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablehonda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablehonda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablelopez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablelopez.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablemauri" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablemauri.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablemenez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablemenez.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablemexes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablemexes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablemontolivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablemontolivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetableniang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetableniang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablenocerino" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablenocerino.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablepoli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablepoli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetableromagnoli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetableromagnoli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablesuso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablesuso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluetablezapata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluetablezapata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marketvaluezapata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marketvaluezapata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="middlebrazil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largebrazil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="middlecolombia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largecolombia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="middlefrance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largefrance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="middleitaly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largeitaly.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="middlejapan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largejapan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="middlenetherlands" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largenetherlands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="middlespain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\largespain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="midfielders" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\midfielders.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionabate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionabate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionabbiati" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionabbiati.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionadriano" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionadriano.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionalex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionalex.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionantonelli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionantonelli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionbacca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionbacca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionbalotelli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionbalotelli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionbertolacci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionbertolacci.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionbonaventura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionbonaventura.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positioncalabria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positioncalabria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positioncerci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positioncerci.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positiondejong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positiondejong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positiondesciglio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positiondesciglio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positiondonnarumma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positiondonnarumma.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionely" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionely.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionhonda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionhonda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionlopez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionlopez.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionmauri" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionmauri.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionmenez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionmenez.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionmexes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionmexes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionmontolivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionmontolivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionniang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionniang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionnocerino" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionnocerino.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionpoli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionpoli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionromagnoli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionromagnoli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionsuso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionsuso.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="positionzapata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\positionzapata.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sansiro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sansiro.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallabate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallabate.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallabbiati" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallabbiati.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smalladriano" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smalladriano.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallalex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallalex.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallantonelli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallantonelli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallargentina" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallargentina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallbacca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallbacca.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallbalotelli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallbalotelli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallbertolacci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallbertolacci.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallbonaventura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallbonaventura.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallbrazil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallbrazil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallcalabria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallcalabria.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallcerci" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallcerci.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallcolombia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallcolombia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smalldejong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smalldejong.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smalldesciglio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smalldesciglio.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smalldonnarumma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smalldonnarumma.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallely" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallely.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallfrance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallfrance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallhonda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallhonda.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallitaly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallitaly.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smalljapan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smalljapan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smalllopez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smalllopez.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallmauri" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallmauri.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallmenez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallmenez.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallmexes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallmexes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallmontolivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallmontolivo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallnetherlands" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallnetherlands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallniang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallniang.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallnocerino" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallnocerino.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallpoli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallpoli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallromagnoli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallromagnoli.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallspain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallspain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallsuso" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallsuso.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="smallzapata" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\smallzapata.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>
