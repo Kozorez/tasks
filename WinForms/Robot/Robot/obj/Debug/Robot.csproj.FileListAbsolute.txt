@@ -1,0 +1,12 @@
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Robot\Robot\bin\Debug\Robot.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Robot\Robot\obj\Debug\Robot.csprojResolveAssemblyReference.cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Robot\Robot\obj\Debug\Robot.Properties.Resources.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Robot\Robot\obj\Debug\Robot.csproj.GenerateResource.Cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Robot\Robot\bin\Debug\Robot.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Robot\Robot\bin\Debug\Robot.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Robot\Robot\obj\Debug\Robot.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Robot\Robot\obj\Debug\Robot.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Robot\Robot\obj\Debug\Robot.MainForm.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Robot\Robot\bin\Debug\Robot.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Robot\Robot\obj\Debug\Robot.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Robot\Robot\obj\Debug\Robot.pdb

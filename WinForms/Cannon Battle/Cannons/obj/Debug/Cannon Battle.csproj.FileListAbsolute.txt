@@ -1,0 +1,21 @@
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannons\Cannons\obj\Debug\Cannon Battle.csprojResolveAssemblyReference.cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannons\Cannons\obj\Debug\Cannon_Battle.MainForm.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannons\Cannons\obj\Debug\Cannons.Properties.Resources.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannons\Cannons\obj\Debug\Cannon Battle.csproj.GenerateResource.Cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannons\Cannons\obj\Debug\Cannons.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannons\Cannons\bin\Debug\Cannons.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannons\Cannons\bin\Debug\Cannons.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannons\Cannons\bin\Debug\Cannons.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannons\Cannons\obj\Debug\Cannons.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannon Battle\Cannons\bin\Debug\Cannons.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannon Battle\Cannons\obj\Debug\Cannons.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannon Battle\Cannons\obj\Debug\Cannons.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannon Battle\Cannons\bin\Debug\Cannons.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannon Battle\Cannons\bin\Debug\Cannons.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannon Battle\Cannons\obj\Debug\Cannon Battle.csprojResolveAssemblyReference.cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannon Battle\Cannons\obj\Debug\Cannon_Battle.MainForm.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannon Battle\Cannons\obj\Debug\Cannons.Properties.Resources.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\Cannon Battle\Cannons\obj\Debug\Cannon Battle.csproj.GenerateResource.Cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Cannon Battle\Cannons\bin\Debug\Cannons.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Cannon Battle\Cannons\obj\Debug\Cannons.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Cannon Battle\Cannons\obj\Debug\Cannons.pdb

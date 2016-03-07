@@ -1,0 +1,12 @@
+c:\users\виктор\documents\visual studio 2013\Projects\Solar System\Solar System\bin\Debug\Solar System.exe.config
+c:\users\виктор\documents\visual studio 2013\Projects\Solar System\Solar System\bin\Debug\Solar System.exe
+c:\users\виктор\documents\visual studio 2013\Projects\Solar System\Solar System\bin\Debug\Solar System.pdb
+c:\users\виктор\documents\visual studio 2013\Projects\Solar System\Solar System\obj\Debug\Solar System.csprojResolveAssemblyReference.cache
+c:\users\виктор\documents\visual studio 2013\Projects\Solar System\Solar System\obj\Debug\Solar_System.Properties.Resources.resources
+c:\users\виктор\documents\visual studio 2013\Projects\Solar System\Solar System\obj\Debug\Solar System.csproj.GenerateResource.Cache
+c:\users\виктор\documents\visual studio 2013\Projects\Solar System\Solar System\obj\Debug\Solar System.exe
+c:\users\виктор\documents\visual studio 2013\Projects\Solar System\Solar System\obj\Debug\Solar System.pdb
+c:\users\виктор\documents\visual studio 2013\Projects\Solar System\Solar System\obj\Debug\Solar_System.MainForm.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Solar System\Solar System\bin\Debug\Solar System.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Solar System\Solar System\obj\Debug\Solar System.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Solar System\Solar System\obj\Debug\Solar System.pdb

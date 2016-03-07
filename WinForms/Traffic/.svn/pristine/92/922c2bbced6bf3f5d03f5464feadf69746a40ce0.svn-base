@@ -1,0 +1,1717 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Matrix
+{
+    class Rational
+    {
+        int sign;
+        int intPart;
+        int numerator;
+        int denominator;
+
+        public Rational(int n, int d, int i = 0, int s = 1)
+        {
+            if (d != 0)
+            {
+                sign = s;
+                intPart = i;
+                numerator = n;
+                denominator = d;
+                GetMixedView();
+            }
+            else
+            {
+                throw new DivideByZeroException();
+            }
+        }
+
+        public Rational()
+        {
+            sign = 1;
+            intPart = 0;
+            numerator = 0;
+            denominator = 1;
+        }
+
+        void GetMixedView()
+        {
+            Cancellation();
+            GetIntPart();
+        }
+
+        void Cancellation()
+        {
+            if (numerator != 0)
+            {
+                int m = denominator;
+                int n = numerator;
+                int ost = m % n;
+                while (ost != 0)
+                {
+                    m = n;
+                    n = ost;
+                    ost = m % n;
+                }
+                int nod = n;
+                if (nod != 1)
+                {
+                    numerator /= nod;
+                    denominator /= nod;
+                }
+            }
+        }
+
+        void GetIntPart()
+        {
+            if (numerator >= denominator)
+            {
+                intPart += (numerator / denominator);
+                numerator %= denominator;
+            }
+        }
+
+        public static Rational operator +(Rational ob1, Rational ob2)
+        {
+            Rational res = new Rational();
+            res.numerator = ob1.sign * (ob1.intPart * ob1.denominator + ob1.numerator) * ob2.denominator + ob2.sign * (ob2.intPart * ob2.denominator + ob2.numerator) * ob1.denominator;
+            res.denominator = ob1.denominator * ob2.denominator;
+            if (res.numerator < 0)
+            {
+                res.numerator *= -1;
+                res.sign = -1;
+            }
+            res.GetMixedView();
+            return res;
+        }
+
+        public static Rational operator +(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                return new Rational(ob1.numerator, ob1.denominator, ob1.intPart, ob1.sign);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob1 + ob2;
+            return res;
+        }
+
+        public static Rational operator +(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                return new Rational(ob1.numerator, ob1.denominator, ob1.intPart, ob1.sign);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob1 + ob2;
+            return res;
+        }
+
+        public static Rational operator -(Rational ob1, Rational ob2)
+        {
+            Rational res = new Rational();
+            res.numerator = ob1.sign * (ob1.intPart * ob1.denominator + ob1.numerator) * ob2.denominator - ob2.sign * (ob2.intPart * ob2.denominator + ob2.numerator) * ob1.denominator;
+            res.denominator = ob1.denominator * ob2.denominator;
+            if (res.numerator < 0)
+            {
+                res.numerator *= -1;
+                res.sign = -1;
+            }
+            res.GetMixedView();
+            return res;
+        }
+
+        public static Rational operator -(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                return new Rational(ob1.numerator, ob1.denominator, ob1.intPart, ob1.sign);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob1 - ob2;
+            return res;
+        }
+
+        public static Rational operator -(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                return new Rational(ob1.numerator, ob1.denominator, ob1.intPart, ob1.sign * -1);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob2 - ob1;
+            return res;
+        }
+
+        public static Rational operator *(Rational ob1, Rational ob2)
+        {
+            Rational res = new Rational();
+            res.numerator = ob1.sign * (ob1.intPart * ob1.denominator + ob1.numerator) * ob2.sign * (ob2.intPart * ob2.denominator + ob2.numerator);
+            res.denominator = ob1.denominator * ob2.denominator;
+            if (res.numerator < 0)
+            {
+                res.numerator *= -1;
+                res.sign = -1;
+            }
+            res.GetMixedView();
+            return res;
+        }
+
+        public static Rational operator *(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                return new Rational(0, 1, 0, 1);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob1 * ob2;
+            return res;
+        }
+
+        public static Rational operator *(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                return new Rational(0, 1, 0, 1);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob1 * ob2;
+            return res;
+        }
+
+        public static Rational operator /(Rational ob1, Rational ob2)
+        {
+            Rational res = new Rational();
+            res.numerator = ob1.sign * (ob1.intPart * ob1.denominator + ob1.numerator) * ob2.denominator;
+            res.denominator = ob2.sign * (ob2.intPart * ob2.denominator + ob2.numerator) * ob1.denominator;
+            if (res.numerator < 0)
+            {
+                res.numerator *= -1;
+                res.sign = -1;
+                if (res.denominator < 0)
+                {
+                    res.denominator *= -1;
+                    res.sign = 1;
+                }
+            }
+            else if (res.denominator < 0)
+            {
+                res.denominator *= -1;
+                res.sign = -1;
+            }
+            res.GetMixedView();
+            return res;
+        }
+
+        public static Rational operator /(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                throw new System.DivideByZeroException();
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob1 / ob2;
+            return res;
+        }
+
+        public static Rational operator /(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                return new Rational(0, 1, 0, 1);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob2 / ob1;
+            return res;
+        }
+
+        public static bool operator ==(Rational ob1, Rational ob2)
+        {
+            Rational res = ob1 - ob2;
+            if (res.numerator == 0 && res.intPart == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator ==(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                Rational ob2 = new Rational(0, 1, 0, 1);
+                return (ob1 == ob2);
+            }
+            Rational ob3 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            return (ob1 == ob3);
+        }
+
+        public static bool operator ==(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                Rational ob2 = new Rational(0, 1, 0, 1);
+                return (ob1 == ob2);
+            }
+            Rational ob3 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            return (ob1 == ob3);
+        }
+
+        public static bool operator !=(Rational ob1, Rational ob2)
+        {
+            return (!(ob1 == ob2));
+        }
+
+        public static bool operator !=(Rational ob1, int a)
+        {
+            return (!(ob1 == a));
+        }
+
+        public static bool operator !=(int a, Rational ob1)
+        {
+            return (!(a == ob1));
+        }
+
+        public static bool operator >(Rational ob1, Rational ob2)
+        {
+            Rational res = ob1 - ob2;
+            if (res.sign == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator >(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                Rational ob2 = new Rational(0, 1, 0, 1);
+                return (ob1 > ob2);
+            }
+            Rational ob3 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            return (ob1 > ob3);
+        }
+
+        public static bool operator >(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                Rational ob2 = new Rational(0, 1, 0, 1);
+                return (ob1 > ob2);
+            }
+            Rational ob3 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            return (ob1 > ob3);
+        }
+
+        public static bool operator <(Rational ob1, Rational ob2)
+        {
+            Rational res = ob1 - ob2;
+            if (res.sign == -1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator <(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                Rational ob2 = new Rational(0, 1, 0, 1);
+                return (ob1 < ob2);
+            }
+            Rational ob3 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            return (ob1 < ob3);
+        }
+
+        public static bool operator <(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                Rational ob2 = new Rational(0, 1, 0, 1);
+                return (ob1 < ob2);
+            }
+            Rational ob3 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            return (ob1 < ob3);
+        }
+
+        public static bool operator >=(Rational ob1, Rational ob2)
+        {
+            if (ob1 > ob2 || ob1 == ob2)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator >=(Rational ob1, int a)
+        {
+            if (ob1 > a || ob1 == a)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator >=(int a, Rational ob1)
+        {
+            if (a > ob1 || a == ob1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator <=(Rational ob1, Rational ob2)
+        {
+            if (ob1 < ob2 || ob1 == ob2)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator <=(Rational ob1, int a)
+        {
+            if (ob1 < a || ob1 == a)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool operator <=(int a, Rational ob1)
+        {
+            if (a < ob1 || a == ob1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public override bool Equals(object ob1)
+        {
+            return ob1 is Rational && this == (Rational)ob1;
+        }
+
+        public override int GetHashCode()
+        {
+            return Tuple.Create(numerator, denominator, intPart, sign).GetHashCode();
+        }
+
+        void show()
+        {
+            Console.WriteLine(numerator);
+            Console.WriteLine(denominator);
+            Console.WriteLine(intPart);
+            Console.WriteLine(sign);
+        }
+    }
+
+    class Matrix
+    {
+        double[,] array;
+        int rows;
+        int columns;
+
+        static int counter = 0;
+        static string[] newarray;
+
+        public Matrix(int r, int c)
+        {
+            rows = r;
+            columns = c;
+            array = new double[rows, columns];
+            for (int i = 0; i < rows; i++)
+            {
+                string[] stroka = Console.ReadLine().Split(' ');
+                for (int j = 0; j < columns; j++)
+                {
+                    array[i, j] = Convert.ToDouble(stroka[j]);
+                }
+            }
+        }
+
+        public Matrix(int r, int c, string empty)
+        {
+            rows = r;
+            columns = c;
+            array = new double[rows, columns];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    array[i, j] = 0;
+                }
+            }
+        }
+
+        bool Is_Square(Matrix ob1)
+        {
+            if (rows == ob1.rows && columns == ob1.columns)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        void Show()
+        {
+            Console.WriteLine("Результат:");
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    Console.Write(array[i, j] + " ");
+                }
+                Console.WriteLine(" ");
+            }
+        }
+
+        public static Matrix operator +(Matrix ob1, Matrix ob2)
+        {
+            if (ob1.Is_Square(ob2))
+            {
+                Matrix result = new Matrix(ob1.rows, ob1.columns, "empty");
+                for (int i = 0; i < result.rows; i++)
+                {
+                    for (int j = 0; j < result.columns; j++)
+                    {
+                        result.array[i, j] = ob1.array[i, j] + ob2.array[i, j];
+                    }
+                }
+                return result;
+            }
+            throw new IndexOutOfRangeException();
+        }
+
+        public static Matrix operator -(Matrix ob1, Matrix ob2)
+        {
+            if (ob1.Is_Square(ob2))
+            {
+                Matrix result = new Matrix(ob1.rows, ob1.columns, "empty");
+                for (int i = 0; i < result.rows; i++)
+                {
+                    for (int j = 0; j < result.columns; j++)
+                    {
+                        result.array[i, j] = ob1.array[i, j] - ob2.array[i, j];
+                    }
+                }
+                return result;
+            }
+            throw new IndexOutOfRangeException();
+        }
+
+        public static Matrix operator *(Matrix ob1, Matrix ob2)
+        {
+            if (ob1.columns == ob2.rows)
+            {
+                Matrix result = new Matrix(ob1.rows, ob2.columns, "empty");
+                for (int i = 0; i < result.rows; i++)
+                {
+                    for (int j = 0; j < result.columns; j++)
+                    {
+                        for (int k = 0; k < ob2.rows; k++)
+                        {
+                            result.array[i, j] += ob1.array[i, k] * ob2.array[k, j];
+                        }
+                    }
+                }
+                return result;
+            }
+            throw new IndexOutOfRangeException();
+        }
+
+        public static Matrix operator *(Matrix ob1, int a)
+        {
+            Matrix result = new Matrix(ob1.rows, ob1.columns, "empty");
+            for (int i = 0; i < result.rows; i++)
+            {
+                for (int j = 0; j < result.columns; j++)
+                {
+                    result.array[i, j] = ob1.array[i, j] * a;
+                }
+            }
+            return result;
+        }
+
+        public static Matrix operator *(int a, Matrix ob1)
+        {
+            Matrix result = new Matrix(ob1.rows, ob1.columns, "empty");
+            for (int i = 0; i < result.rows; i++)
+            {
+                for (int j = 0; j < result.columns; j++)
+                {
+                    result.array[i, j] = a * ob1.array[i, j];
+                }
+            }
+            return result;
+        }
+
+        //Обчислення визначника матриці (порядок не перевищує 6) за теоремою Лапласа
+
+        double Determinant_Laplace()
+        {
+            double determinant = 0;
+            if (rows == columns)
+            {
+                if (columns == 1)
+                {
+                    determinant = array[0, 0];
+                }
+                else
+                {
+                    Matrix newmatrix = new Matrix(rows - 1, columns - 1, "empty");
+                    for (int i = 0; i < columns; i++)
+                    {
+                        for (int j = 1; j < rows; j++)
+                        {
+                            int h = 0;
+                            for (int k = 0; k < columns; k++)
+                            {
+                                if (k == i)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    newmatrix.array[j - 1, h] = array[j, k];
+                                    h++;
+                                }
+                            }
+                        }
+                        determinant += array[0, i] * Math.Pow(-1, 2 + i) * newmatrix.Determinant_Laplace();
+                    }
+                }
+                return determinant;
+            }
+            else
+            {
+                throw new ArithmeticException("Введена матриця не є квадратною!");
+            }
+        }
+
+        //Обчислення визначника матриці методом зведення її до трикутної форми
+
+        double Determinant_Triangle()
+        {
+            Matrix newmatrix = new Matrix(rows, columns, "empty");
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    newmatrix.array[i, j] = array[i, j];
+                }
+            }
+            double determinant = 1;
+            if (rows == columns)
+            {
+                for (int k = 0; k < newmatrix.rows - 1; k++)
+                {
+                    if (newmatrix.array[k, k] != 0)
+                    {
+                        for (int i = k + 1; i < newmatrix.rows; i++)
+                        {
+                            for (i = k + 1; i < newmatrix.rows; i++)
+                            {
+                                double temp = newmatrix.array[i, k] / newmatrix.array[k, k];
+                                for (int j = 0; j < newmatrix.rows; j++)
+                                {
+                                    newmatrix.array[i, j] = newmatrix.array[i, j] - temp * newmatrix.array[k, j];
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        throw new ArithmeticException("Під час роботи програми якийсь з діагональніх елементів став нулем. Отже, визначник дорівнює нулеві.");
+                    }
+                }
+                newmatrix.Show();
+                for (int q = 0; q < rows; q++)
+                {
+                    determinant *= newmatrix.array[q, q];
+                }
+                return determinant;
+            }
+            else
+            {
+                throw new ArithmeticException("Введена матриця не є квадратною!");
+            }
+        }
+
+        //Обчислення визначника матриці (порядок не перевищує 5) за означенням
+
+        double Determinant_Definition()
+        {
+            if (rows == columns)
+            {
+                double determinant = 0;
+                int result = 1;
+                string line = "";
+                for (int i = 1; i < columns + 1; i++)
+                {
+                    line += i;
+                }
+                for (int j = 2; j < line.Length + 1; j++)
+                {
+                    result *= j;
+                }
+                newarray = new string[result];
+                Combinations(line, "");
+                for (int k = 0; k < counter; k++)
+                {
+                    double temp = 1;
+                    for (int l = 0; l < columns; l++)
+                    {
+                        int n = Convert.ToInt32(newarray[k][l]);
+                        temp *= array[l, n - '1'];
+                    }
+                    determinant += Sort(newarray[k]) * temp;
+                }
+                return determinant;
+            }
+            else
+            {
+                throw new ArithmeticException("Введена матриця не є квадратною!");
+            }
+        }
+
+        void Combinations(string line, string result)
+        {
+            if (line == "")
+            {
+                newarray[counter] = result;
+                counter++;
+            }
+            for (int i = 0; i < line.Length; i++)
+            {
+                Combinations(line.Remove(i, 1), result + line[i]);
+            }
+        }
+
+        double Sort(string line)
+        {
+            char[] symbol = line.ToCharArray();
+            int result = 1;
+            for (int i = symbol.Length - 1; i > 0; i--)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    if (symbol[j] > symbol[j + 1])
+                    {
+                        char temp = symbol[j];
+                        symbol[j] = symbol[j + 1];
+                        symbol[j + 1] = temp;
+                        result *= -1;
+                    }
+                }
+            }
+            return result;
+        }
+
+        //Множення матриць
+
+        static Matrix Matrix_Product(Matrix ob1, Matrix ob2)
+        {
+            if (ob1.columns == ob2.rows)
+            {
+                Matrix result = new Matrix(ob1.rows, ob2.columns, "empty");
+                for (int i = 0; i < result.rows; i++)
+                {
+                    for (int j = 0; j < result.columns; j++)
+                    {
+                        for (int k = 0; k < ob2.rows; k++)
+                        {
+                            result.array[i, j] += ob1.array[i, k] * ob2.array[k, j];
+                        }
+                    }
+                }
+                return result;
+            }
+            else
+            {
+                throw new ArithmeticException("Розміри введених матриць не відповідають вимогам задачі!");
+            }
+        }
+
+        //Обчислення оберненої матриці (порядок не перевищує 5) за теоремою про існування оберненої
+
+        Matrix Get_Inversed_Matrix_By_Theorem()
+        {
+            if (rows == columns)
+            {
+                double determinant = Determinant_Laplace();
+                if (determinant != 0)
+                {
+                    Matrix transpose_matrix = Transpose();
+                    Matrix united_matrix = new Matrix(rows, columns, "empty");
+                    Matrix result = new Matrix(columns, rows, "empty");
+                    for (int i = 0; i < rows; i++)
+                    {
+                        for (int j = 0; j < columns; j++)
+                        {
+                            united_matrix.array[i, j] = transpose_matrix.Get_Cofactors(i, j);
+                            result.array[i, j] = united_matrix.array[i, j] / determinant;
+                        }
+                    }
+                    return result;
+                }
+                else
+                {
+                    throw new ArithmeticException("Детермінант матриці дорівнює нулеві. Оберненої матриці не існує!");
+                }
+            }
+            else
+            {
+                throw new ArithmeticException("Введена матриця не є квадратною!");
+            }
+        }
+
+        Matrix Transpose()
+        {
+            Matrix result = new Matrix(columns, rows, "empty");
+            for (int i = 0; i < result.rows; i++)
+            {
+                for (int j = 0; j < result.columns; j++)
+                {
+                    result.array[i, j] = array[j, i];
+                }
+            }
+            return result;
+        }
+
+        double Get_Cofactors(int r, int c)
+        {
+            double cofactor = 0;
+            if (rows == columns)
+            {
+                if (columns == 1)
+                {
+                    cofactor = array[0, 0];
+                }
+                else
+                {
+                    Matrix newmatrix = new Matrix(rows - 1, columns - 1, "empty");
+                    int q = 0;
+                    int h = 0;
+                    for (int i = 0; i < rows; i++)
+                    {
+                        for (int j = 0; j < columns; j++)
+                        {
+                            if (i == r || j == c)
+                            {
+                                continue;
+                            }
+                            else
+                            {
+                                newmatrix.array[q, h] = array[i, j];
+                                if (h == newmatrix.columns - 1)
+                                {
+                                    h = 0;
+                                    q++;
+                                }
+                                else
+                                {
+                                    h++;
+                                }
+                            }
+                        }
+                    }
+                    cofactor += Math.Pow(-1, r + c) * newmatrix.Determinant_Laplace();
+                }
+                return cofactor;
+            }
+            else
+            {
+                throw new ArithmeticException("Введена матриця не є квадратною!");
+            }
+        }
+
+        //Обчислення оберненої матриці за допомогою еквівалентних перетворень рядків
+
+        Matrix Get_Inversed_Matrix_By_Equivalent_Changes()
+        {
+            if (rows == columns)
+            {
+                double determinant = Determinant_Laplace();
+                if (determinant != 0)
+                {
+                    Matrix newmatrix = new Matrix(rows, columns * 2, "empty");
+                    for (int i = 0; i < rows; i++)
+                    {
+                        for (int j = 0; j < columns; j++)
+                        {
+                            newmatrix.array[i, j] = array[i, j];
+                        }
+                    }
+                    for (int i = 0; i < rows; i++)
+                    {
+                        for (int j = columns; j < newmatrix.columns; j++)
+                        {
+                            if (j - i == rows)
+                            {
+                                newmatrix.array[i, j] = 1;
+                            }
+                        }
+                    }
+                    for (int k = 0; k < rows - 1; k++)
+                    {
+                        for (int i = k + 1; i < rows; i++)
+                        {
+                            for (i = k + 1; i < rows; i++)
+                            {
+                                double temp = newmatrix.array[i, k] / newmatrix.array[k, k];
+                                for (int j = 0; j < newmatrix.columns; j++)
+                                {
+                                    newmatrix.array[i, j] = newmatrix.array[i, j] - temp * newmatrix.array[k, j];
+                                }
+                            }
+                        }
+                    }
+                    for (int k = rows - 1; k > 0; k--)
+                    {
+                        for (int i = k - 1; i > -1; i--)
+                        {
+                            for (i = k - 1; i > -1; i--)
+                            {
+                                double temp = newmatrix.array[i, k] / newmatrix.array[k, k];
+                                for (int j = newmatrix.columns - 1; j > -1; j--)
+                                {
+                                    newmatrix.array[i, j] = newmatrix.array[i, j] - temp * newmatrix.array[k, j];
+                                }
+                            }
+                        }
+                    }
+                    for (int i = 0; i < rows; i++)
+                    {
+                        double temp = newmatrix.array[i, i];
+                        for (int j = 0; j < newmatrix.columns; j++)
+                        {
+                            newmatrix.array[i, j] = newmatrix.array[i, j] / temp;
+                        }
+                    }
+                    Matrix result = new Matrix(rows, columns, "empty");
+                    for (int i = 0; i < rows; i++)
+                    {
+                        double temp = newmatrix.array[i, i];
+                        for (int j = 0; j < newmatrix.columns; j++)
+                        {
+                            newmatrix.array[i, j] = newmatrix.array[i, j] / temp;
+                        }
+                    }
+                    for (int i = 0, j = 0; i < rows; i++, j++)
+                    {
+                        for (int m = 0, n = columns; m < columns; m++, n++)
+                        {
+                            result.array[i, m] = newmatrix.array[j, n];
+                        }
+                    }
+                    return result;
+                }
+                else
+                {
+                    throw new ArithmeticException("Детермінант матриці дорівнює нулеві. Оберненої матриці не існує!");
+                }
+            }
+            else
+            {
+                throw new ArithmeticException("Введена матриця не є квадратною!");
+            }
+        }
+
+        //Визначення рангу матриці (максимальний з розмірів не перевищує 6) методом обвідних мінорів
+
+        int Get_The_Rank_By_Bypass_Minors()
+        {
+            Matrix newmatrix = this;
+            int rank = 0;
+        label:
+            for (int i = rank; i < rows; i++)
+            {
+                for (int j = rank; j < columns; j++)
+                {
+                    if (newmatrix.Get_The_Minors(rank, i, j) == 0)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        newmatrix = Matrix.Permutate_Rows(Matrix.Permutate_Columns(this, rank, j), rank, i);
+                        rank++;
+                        goto label;
+                    }
+                }
+            }
+            return rank;
+        }
+
+        double Get_The_Minors(int current_rank, int r, int c)
+        {
+            if (current_rank == 0)
+            {
+                return array[r, c];
+            }
+            else
+            {
+                Matrix newmatrix = new Matrix(current_rank + 1, current_rank + 1, "empty");
+                for (int i = 0; i < current_rank; i++)
+                {
+                    for (int j = 0; j < current_rank; j++)
+                    {
+                        newmatrix.array[i, j] = array[i, j];
+                    }
+                }
+                for (int i = 0; i < current_rank; i++)
+                {
+                    newmatrix.array[current_rank, i] = array[r, i];
+                    newmatrix.array[i, current_rank] = array[i, c];
+                }
+                newmatrix.array[current_rank, current_rank] = array[r, c];
+                return newmatrix.Determinant_Laplace();
+            }
+        }
+
+        static Matrix Permutate_Rows(Matrix matrix, int r1, int r2)
+        {
+            Matrix newmatrix = new Matrix(matrix.rows, matrix.columns, "empty");
+            for (int i = 0; i < r1; i++)
+            {
+                for (int j = 0; j < matrix.columns; j++)
+                {
+                    newmatrix.array[i, j] = matrix.array[i, j];
+                }
+            }
+            for (int i = 0; i < matrix.columns; i++)
+            {
+                newmatrix.array[r1, i] = matrix.array[r2, i];
+                newmatrix.array[r2, i] = matrix.array[r1, i];
+            }
+            for (int i = r1 + 1; i < matrix.rows; i++)
+            {
+                if (i != r2)
+                {
+                    for (int j = 0; j < matrix.columns; j++)
+                    {
+                        newmatrix.array[i, j] = matrix.array[i, j];
+                    }
+                }
+            }
+            return newmatrix;
+        }
+
+        static Matrix Permutate_Columns(Matrix matrix, int c1, int c2)
+        {
+            Matrix newmatrix = new Matrix(matrix.rows, matrix.columns, "empty");
+            for (int i = 0; i < c1; i++)
+            {
+                for (int j = 0; j < matrix.rows; j++)
+                {
+                    newmatrix.array[j, i] = matrix.array[j, i];
+                }
+            }
+            for (int i = 0; i < matrix.rows; i++)
+            {
+                newmatrix.array[i, c1] = matrix.array[i, c2];
+                newmatrix.array[i, c2] = matrix.array[i, c1];
+            }
+            for (int i = c1 + 1; i < matrix.columns; i++)
+            {
+                if (i != c2)
+                {
+                    for (int j = 0; j < matrix.rows; j++)
+                    {
+                        newmatrix.array[j, i] = matrix.array[j, i];
+                    }
+                }
+            }
+            return newmatrix;
+        }
+
+        //Визначення рангу матриці за допомогою зведення до трапецевидної форми
+
+        int Get_The_Rank_By_Trapezoidal_Form()
+        {
+            int rank = 0;
+            Rational[,] rational_array = new Rational[rows, columns];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    rational_array[i, j] = new Rational(0, 1, (int)array[i, j]);
+                }
+            }
+            for (int i = 0; i < rational_array.GetLength(0) - 1; i++)
+            {
+                Rational diagonal_element = rational_array[i, i];
+                if (diagonal_element != 0)
+                {
+                    for (int j = i + 1; j < rational_array.GetLength(0); j++)
+                    {
+                        if (rational_array[j, i] != 0)
+                        {
+                            Rational temp = rational_array[j, i] / diagonal_element * (-1);
+                            for (int k = i; k < rational_array.GetLength(1); k++)
+                            {
+                                rational_array[j, k] += rational_array[i, k] * temp;
+                            }
+                        }
+                    }
+                }
+            }
+            Rational[,] cut = Matrix.Get_Similar_Rows(rational_array);
+            for (int i = 0; i < cut.GetLength(0); i++)
+            {
+                int counter = 0;
+                for (int j = 0; j < cut.GetLength(1); j++)
+                {
+                    if (cut[i, j] == 0)
+                    {
+                        counter++;
+                    }
+                }
+                if (counter != cut.GetLength(1))
+                {
+                    rank++;
+                }
+            }
+            return rank;
+        }
+
+        static Rational[,] Get_Similar_Rows(Rational[,] rational_array)
+        {
+            if (rational_array.GetLength(0) == 1)
+            {
+                return rational_array;
+            }
+            else
+            {
+                int i = 0;
+            label:
+                for (i = i; i < rational_array.GetLength(0) - 1; i++)
+                {
+                    Rational temp = new Rational(0, 1);
+                    int j;
+                    for (j = 0; j < rational_array.GetLength(1); j++)
+                    {
+                        if (rational_array[i, j] == 0 && rational_array[i + 1, j] != 0)
+                        {
+                            i++;
+                            goto label;
+                        }
+                        else if (rational_array[i + 1, j] == 0 && rational_array[i, j] != 0)
+                        {
+                            i++;
+                            goto label;
+                        }
+                        else if (rational_array[i + 1, j] == 0 && rational_array[i, j] == 0)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            temp = rational_array[i, j] / rational_array[i + 1, j];
+                            break;
+                        }
+                    }
+                    int counter = j;
+                    for (int k = j; k < rational_array.GetLength(1); k++)
+                    {
+                        if (rational_array[i, k] / temp == rational_array[i + 1, k])
+                        {
+                            counter++;
+                        }
+                    }
+                    if (counter == rational_array.GetLength(1))
+                    {
+                        break;
+                    }
+                }
+                if (i == rational_array.GetLength(0) - 1)
+                {
+                    return rational_array;
+                }
+                else
+                {
+                    Rational[,] cut = new Rational[rational_array.GetLength(0) - 1, rational_array.GetLength(1)];
+                    int count = 0;
+                    for (int j = 0; j < rational_array.GetLength(0); j++)
+                    {
+                        if (j == i)
+                        {
+                            count++;
+                        }
+                        else
+                        {
+                            for (int k = 0; k < rational_array.GetLength(1); k++)
+                            {
+                                cut[j - count, k] = rational_array[j, k];
+                            }
+                        }
+                    }
+                    return Matrix.Get_Similar_Rows(cut);
+                }
+            }
+        }
+
+        static Rational[,] Get_Null_Rows(Rational[,] rational_array)
+        {
+            if (rational_array.GetLength(0) == 1)
+            {
+                return rational_array;
+            }
+            else
+            {
+                for (int i = 0; i < rational_array.GetLength(0); i++)
+                {
+                    bool flag = false;
+                    for (int j = 0; j < rational_array.GetLength(1); j++)
+                    {
+                        if (rational_array[i, j] != 0)
+                        {
+                            flag = true;
+                        }
+                    }
+                    if (flag == true)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        Rational[,] newrational = new Rational[rational_array.GetLength(0) - 1, rational_array.GetLength(1)];
+                        for (int m = 0; m < rational_array.GetLength(0); m++)
+                        {
+                            for (int n = 0; n < rational_array.GetLength(1); n++)
+                            {
+                                if (m == i)
+                                {
+                                    continue;
+                                }
+                                else
+                                {
+                                    newrational[m, n] = rational_array[m, n];
+                                }
+                            }
+                        }
+                        return newrational;
+                    }
+                }
+            }
+            return rational_array;
+        }
+
+        Matrix Get_Similar_Rows()
+        {
+            if (rows == 1)
+            {
+                return this;
+            }
+            else
+            {
+                int i;
+                for (i = 0; i < rows - 1; i++)
+                {
+                    double temp = 0;
+                    int j;
+                    for (j = 0; j < columns; j++)
+                    {
+                        if (array[i, j] == 0 || array[i + 1, j] == 0)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            temp = array[i, j] / array[i + 1, j];
+                            break;
+                        }
+                    }
+                    int counter = j + 1;
+                    for (int k = j + 1; k < columns; k++)
+                    {
+                        if (array[i, k] / temp == array[i + 1, k])
+                        {
+                            counter++;
+                        }
+                    }
+                    if (counter == columns)
+                    {
+                        break;
+                    }
+                }
+                if (i == rows - 1)
+                {
+                    return this;
+                }
+                else
+                {
+                    Matrix cut = new Matrix(rows - 1, columns, "empty");
+                    int count = 0;
+                    for (int j = 0; j < rows; j++)
+                    {
+                        if (j == i)
+                        {
+                            count++;
+                        }
+                        else
+                        {
+                            for (int k = 0; k < cut.columns; k++)
+                            {
+                                cut.array[j - count, k] = array[j, k];
+                            }
+                        }
+                    }
+                    return cut.Get_Similar_Rows();
+                }
+            }
+        }
+
+        //Розв’язання СЛАР за теоремою Крамера
+
+        double[] Cramer()
+        {
+            double[] determinants = new double[rows];
+            double[] free_coeffs = new double[rows];
+            double[] result = new double[rows];
+            Matrix general = new Matrix(rows, columns - 1, "empty");
+            double general_determinant = 0;
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < rows; j++)
+                {
+                    general.array[i, j] = array[i, j];
+                }
+            }
+            general_determinant = general.Determinant_Laplace();
+            for (int i = 0; i < rows; i++)
+            {
+                free_coeffs[i] = array[i, rows];
+            }
+            int h = 0;
+            for (int i = 0; i < rows; i++)
+            {
+                Matrix temp = new Matrix(rows, columns - 1, "empty");
+                for (int j = 0; j < rows; j++)
+                {
+                    for (int k = 0; k < rows; k++)
+                    {
+                        if (h == j)
+                        {
+                            temp.array[k, h] = free_coeffs[k];
+                        }
+                        else
+                        {
+                            temp.array[k, j] = array[k, j];
+                        }
+                    }
+                }
+                h++;
+                determinants[i] = temp.Determinant_Laplace();
+            }
+            if (general_determinant != 0)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    result[i] = determinants[i] / general_determinant;
+                }
+                return result;
+            }
+            else
+            {
+                bool flag = false;
+                for (int i = 0; i < rows; i++)
+                {
+                    if (determinants[i] != 0)
+                    {
+                        flag = true;
+                    }
+                }
+                if (flag == false)
+                {
+                    throw new ArithmeticException("Задана система лінійних алгебраїчних рівнянь є несумісною (коренів немає)");
+                }
+                else
+                {
+                    throw new ArithmeticException("Задана система лінійних алгебраїчних рівнянь є невизначеною (має безліч розв'язків)");
+                }
+            }
+        }
+
+        //Розв’язання СЛАР методом Жордана-Гаусса
+
+        double[] Jordan_Gauss()
+        {
+            if (rows + 1 == columns)
+            {
+                double[] result = new double[rows];
+                Matrix newmatrix = new Matrix(rows, columns, "empty");
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < columns; j++)
+                    {
+                        newmatrix.array[i, j] = array[i, j];
+                    }
+                }
+                for (int k = 0; k < rows - 1; k++)
+                {
+                    for (int i = k + 1; i < rows; i++)
+                    {
+                        for (i = k + 1; i < rows; i++)
+                        {
+                            double temp = newmatrix.array[i, k] / newmatrix.array[k, k];
+                            for (int j = 0; j < columns; j++)
+                            {
+                                newmatrix.array[i, j] = newmatrix.array[i, j] - temp * newmatrix.array[k, j];
+                            }
+                        }
+                    }
+                }
+                for (int k = rows - 1; k > 0; k--)
+                {
+                    for (int i = k - 1; i > -1; i--)
+                    {
+                        for (i = k - 1; i > -1; i--)
+                        {
+                            double temp = newmatrix.array[i, k] / newmatrix.array[k, k];
+                            for (int j = columns - 1; j > -1; j--)
+                            {
+                                newmatrix.array[i, j] = newmatrix.array[i, j] - temp * newmatrix.array[k, j];
+                            }
+                        }
+                    }
+                }
+                for (int i = 0; i < rows; i++)
+                {
+                    double temp = newmatrix.array[i, i];
+                    for (int j = 0; j < columns; j++)
+                    {
+                        newmatrix.array[i, j] = newmatrix.array[i, j] / temp;
+                    }
+                }
+                for (int i = 0; i < rows; i++)
+                {
+                    result[i] = newmatrix.array[i, columns - 1];
+                }
+                return result;
+            }
+            else
+            {
+                throw new ArithmeticException("Розміри введеної матриці не відповідають вимогам задачі!");
+            }
+        }
+
+        //Розв’язання СЛАР матричним методом
+
+        static double[] Matrix_Method(Matrix ob1, Matrix ob2)
+        {
+            if (ob1.rows == ob1.columns && ob2.rows == ob1.rows && ob2.columns == 1)
+            {
+                double determinant = ob1.Determinant_Laplace();
+                if (determinant != 0)
+                {
+                    Matrix ob1_transpose = new Matrix(ob1.rows, ob1.columns, "empty");
+                    Matrix temp = new Matrix(ob2.rows, ob2.columns, "empty");
+                    double[] result = new double[ob2.rows];
+                    ob1_transpose = ob1.Get_Inversed_Matrix_By_Equivalent_Changes();
+                    temp = ob1_transpose * ob2;
+                    for (int i = 0; i < ob1.rows; i++)
+                    {
+                        result[i] = temp.array[i, 0];
+                    }
+                    return result;
+                }
+                else
+                {
+                    throw new ArithmeticException("Детермінант матриці дорівнює нулеві. Оберненої матриці не існує!");
+                }
+            }
+            else
+            {
+                throw new ArithmeticException("Розміри введеної матриці не відповідають вимогам задачі!");
+            }
+        }
+
+        //Побудова фундаментальної системи розв’язків однорідної СЛАР
+
+        Rational[,] Get_Fundamental_System()
+        {
+            int rank = 0;
+            Rational[,] rational_array = new Rational[rows, columns];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    rational_array[i, j] = new Rational(0, 1, (int)array[i, j]);
+                }
+            }
+            for (int i = 0; i < rational_array.GetLength(0) - 1; i++)
+            {
+                Rational diagonal_element = rational_array[i, i];
+                if (diagonal_element != 0)
+                {
+                    for (int j = i + 1; j < rational_array.GetLength(0); j++)
+                    {
+                        if (rational_array[j, i] != 0)
+                        {
+                            Rational temp = rational_array[j, i] / diagonal_element * (-1);
+                            for (int k = i; k < rational_array.GetLength(1); k++)
+                            {
+                                rational_array[j, k] += rational_array[i, k] * temp;
+                            }
+                        }
+                    }
+                }
+            }
+            Rational[,] cut = Get_Similar_Rows(rational_array);
+            cut = Get_Null_Rows(cut);
+            for (int i = 0; i < cut.GetLength(0); i++)
+            {
+                int counter = 0;
+                for (int j = 0; j < cut.GetLength(1); j++)
+                {
+                    if (cut[i, j] == 0)
+                    {
+                        counter++;
+                    }
+                }
+                if (counter != cut.GetLength(1))
+                {
+                    rank++;
+                }
+            }
+            for (int k = 0; k < cut.GetLength(0) - 1; k++)
+            {
+                for (int i = k + 1; i < cut.GetLength(0); i++)
+                {
+                    for (i = k + 1; i < cut.GetLength(0); i++)
+                    {
+                        Rational temp = cut[i, k] / cut[k, k];
+                        for (int j = 0; j < cut.GetLength(1); j++)
+                        {
+                            cut[i, j] = cut[i, j] - temp * cut[k, j];
+                        }
+                    }
+                }
+            }
+            for (int k = cut.GetLength(0) - 1; k > 0; k--)
+            {
+                for (int i = k - 1; i > -1; i--)
+                {
+                    for (i = k - 1; i > -1; i--)
+                    {
+                        Rational temp = cut[i, k] / cut[k, k];
+                        for (int j = cut.GetLength(1) - 1; j > -1; j--)
+                        {
+                            cut[i, j] = cut[i, j] - temp * cut[k, j];
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < cut.GetLength(0); i++)
+            {
+                Rational temp = cut[i, i];
+                for (int j = 0; j < cut.GetLength(1); j++)
+                {
+                    cut[i, j] = cut[i, j] / temp;
+                }
+            }
+            Rational[,] result = new Rational[cut.GetLength(0), cut.GetLength(1) - rank];
+            for (int i = cut.GetLength(1) - 1; i > rank - 1; i--)
+            {
+                for (int j = 0; j < 1; j++)
+                {
+                    for (int k = 0; k < cut.GetLength(1) - 1; k++)
+                    {
+                        result[k, j] = cut[k, i];
+                    }
+                }
+            }
+            return result;
+        }
+
+        //Знаходження загального розв’язку неоднорідної СЛАР
+
+        Rational[,] Get_General_Solution()
+        {
+            Rational[,] fundamental_system = Get_Fundamental_System_For_General_Solution();
+
+            int rank = 0;
+            Rational[,] rational_array = new Rational[rows, columns];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    rational_array[i, j] = new Rational(0, 1, (int)array[i, j]);
+                }
+            }
+            for (int i = 0; i < rational_array.GetLength(0) - 1; i++)
+            {
+                Rational diagonal_element = rational_array[i, i];
+                if (diagonal_element != 0)
+                {
+                    for (int j = i + 1; j < rational_array.GetLength(0); j++)
+                    {
+                        if (rational_array[j, i] != 0)
+                        {
+                            Rational temp = rational_array[j, i] / diagonal_element * (-1);
+                            for (int k = i; k < rational_array.GetLength(1); k++)
+                            {
+                                rational_array[j, k] += rational_array[i, k] * temp;
+                            }
+                        }
+                    }
+                }
+            }
+            Rational[,] cut = Get_Similar_Rows(rational_array);
+            cut = Get_Null_Rows(cut);
+            for (int i = 0; i < cut.GetLength(0); i++)
+            {
+                int counter = 0;
+                for (int j = 0; j < cut.GetLength(1); j++)
+                {
+                    if (cut[i, j] == 0)
+                    {
+                        counter++;
+                    }
+                }
+                if (counter != cut.GetLength(1))
+                {
+                    rank++;
+                }
+            }
+            for (int k = 0; k < cut.GetLength(0) - 1; k++)
+            {
+                for (int i = k + 1; i < cut.GetLength(0); i++)
+                {
+                    for (i = k + 1; i < cut.GetLength(0); i++)
+                    {
+                        Rational temp = cut[i, k] / cut[k, k];
+                        for (int j = 0; j < cut.GetLength(1); j++)
+                        {
+                            cut[i, j] = cut[i, j] - temp * cut[k, j];
+                        }
+                    }
+                }
+            }
+            for (int k = cut.GetLength(0) - 1; k > 0; k--)
+            {
+                for (int i = k - 1; i > -1; i--)
+                {
+                    for (i = k - 1; i > -1; i--)
+                    {
+                        Rational temp = cut[i, k] / cut[k, k];
+                        for (int j = cut.GetLength(1) - 1; j > -1; j--)
+                        {
+                            cut[i, j] = cut[i, j] - temp * cut[k, j];
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < cut.GetLength(0); i++)
+            {
+                Rational temp = cut[i, i];
+                for (int j = 0; j < cut.GetLength(1); j++)
+                {
+                    cut[i, j] = cut[i, j] / temp;
+                }
+            }
+            Rational[,] result = new Rational[cut.GetLength(0), 1];
+            for (int i = 0; i < cut.GetLength(0); i++)
+            {
+                result[i, 0] = cut[i, cut.GetLength(1) - 1];
+            }
+            return result;
+        }
+
+        Rational[,] Get_Fundamental_System_For_General_Solution()
+        {
+            int rank = 0;
+            Rational[,] rational_array = new Rational[rows, columns - 1];
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns - 1; j++)
+                {
+                    rational_array[i, j] = new Rational(0, 1, (int)array[i, j]);
+                }
+            }
+            for (int i = 0; i < rational_array.GetLength(0) - 1; i++)
+            {
+                Rational diagonal_element = rational_array[i, i];
+                if (diagonal_element != 0)
+                {
+                    for (int j = i + 1; j < rational_array.GetLength(0); j++)
+                    {
+                        if (rational_array[j, i] != 0)
+                        {
+                            Rational temp = rational_array[j, i] / diagonal_element * (-1);
+                            for (int k = i; k < rational_array.GetLength(1); k++)
+                            {
+                                rational_array[j, k] += rational_array[i, k] * temp;
+                            }
+                        }
+                    }
+                }
+            }
+            Rational[,] cut = Get_Similar_Rows(rational_array);
+            cut = Get_Null_Rows(cut);
+            for (int i = 0; i < cut.GetLength(0); i++)
+            {
+                int counter = 0;
+                for (int j = 0; j < cut.GetLength(1); j++)
+                {
+                    if (cut[i, j] == 0)
+                    {
+                        counter++;
+                    }
+                }
+                if (counter != cut.GetLength(1))
+                {
+                    rank++;
+                }
+            }
+            for (int k = 0; k < cut.GetLength(0) - 1; k++)
+            {
+                for (int i = k + 1; i < cut.GetLength(0); i++)
+                {
+                    for (i = k + 1; i < cut.GetLength(0); i++)
+                    {
+                        Rational temp = cut[i, k] / cut[k, k];
+                        for (int j = 0; j < cut.GetLength(1); j++)
+                        {
+                            cut[i, j] = cut[i, j] - temp * cut[k, j];
+                        }
+                    }
+                }
+            }
+            for (int k = cut.GetLength(0) - 1; k > 0; k--)
+            {
+                for (int i = k - 1; i > -1; i--)
+                {
+                    for (i = k - 1; i > -1; i--)
+                    {
+                        Rational temp = cut[i, k] / cut[k, k];
+                        for (int j = cut.GetLength(1) - 1; j > -1; j--)
+                        {
+                            cut[i, j] = cut[i, j] - temp * cut[k, j];
+                        }
+                    }
+                }
+            }
+            for (int i = 0; i < cut.GetLength(0); i++)
+            {
+                Rational temp = cut[i, i];
+                for (int j = 0; j < cut.GetLength(1); j++)
+                {
+                    cut[i, j] = cut[i, j] / temp;
+                }
+            }
+            return cut;
+        }
+
+        static void Main(string[] args)
+        {}
+    }
+}

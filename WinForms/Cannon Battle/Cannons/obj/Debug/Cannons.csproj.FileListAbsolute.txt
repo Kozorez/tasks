@@ -1,0 +1,9 @@
+c:\users\виктор\documents\visual studio 2013\Projects\Cannons\Cannons\bin\Debug\Cannons.exe.config
+c:\users\виктор\documents\visual studio 2013\Projects\Cannons\Cannons\bin\Debug\Cannons.exe
+c:\users\виктор\documents\visual studio 2013\Projects\Cannons\Cannons\bin\Debug\Cannons.pdb
+c:\users\виктор\documents\visual studio 2013\Projects\Cannons\Cannons\obj\Debug\Cannons.csprojResolveAssemblyReference.cache
+c:\users\виктор\documents\visual studio 2013\Projects\Cannons\Cannons\obj\Debug\Cannons.Properties.Resources.resources
+c:\users\виктор\documents\visual studio 2013\Projects\Cannons\Cannons\obj\Debug\Cannons.csproj.GenerateResource.Cache
+c:\users\виктор\documents\visual studio 2013\Projects\Cannons\Cannons\obj\Debug\Cannons.exe
+c:\users\виктор\documents\visual studio 2013\Projects\Cannons\Cannons\obj\Debug\Cannons.pdb
+c:\users\виктор\documents\visual studio 2013\Projects\Cannons\Cannons\obj\Debug\Cannons.MainForm.resources

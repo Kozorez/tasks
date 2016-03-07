@@ -1,0 +1,12 @@
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Traffic\Traffic\bin\Debug\Traffic.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Traffic\Traffic\obj\Debug\Traffic.csprojResolveAssemblyReference.cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Traffic\Traffic\obj\Debug\Traffic.Properties.Resources.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Traffic\Traffic\obj\Debug\Traffic.csproj.GenerateResource.Cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Traffic\Traffic\bin\Debug\Traffic.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Traffic\Traffic\bin\Debug\Traffic.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Traffic\Traffic\obj\Debug\Traffic.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Traffic\Traffic\obj\Debug\Traffic.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Traffic\Traffic\obj\Debug\Traffic.MainForm.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Traffic\Traffic\bin\Debug\Traffic.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Traffic\Traffic\obj\Debug\Traffic.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Traffic\Traffic\obj\Debug\Traffic.pdb

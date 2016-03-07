@@ -1,0 +1,12 @@
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\BankQueue\BankQueue\bin\Debug\BankQueue.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\BankQueue\BankQueue\bin\Debug\BankQueue.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\BankQueue\BankQueue\bin\Debug\BankQueue.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\BankQueue\BankQueue\obj\Debug\BankQueue.csprojResolveAssemblyReference.cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\BankQueue\BankQueue\obj\Debug\BankQueue.Properties.Resources.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\BankQueue\BankQueue\obj\Debug\BankQueue.csproj.GenerateResource.Cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\BankQueue\BankQueue\obj\Debug\BankQueue.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\BankQueue\BankQueue\obj\Debug\BankQueue.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\BankQueue\BankQueue\obj\Debug\BankQueue.MainForm.resources
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\BankQueue\BankQueue\bin\Debug\BankQueue.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\BankQueue\BankQueue\obj\Debug\BankQueue.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\BankQueue\BankQueue\obj\Debug\BankQueue.pdb
