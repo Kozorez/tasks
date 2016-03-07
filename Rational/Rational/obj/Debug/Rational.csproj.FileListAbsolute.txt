@@ -1,0 +1,9 @@
+c:\users\виктор\documents\visual studio 2013\Projects\Rational\Rational\bin\Debug\Rational.exe.config
+c:\users\виктор\documents\visual studio 2013\Projects\Rational\Rational\bin\Debug\Rational.exe
+c:\users\виктор\documents\visual studio 2013\Projects\Rational\Rational\bin\Debug\Rational.pdb
+c:\users\виктор\documents\visual studio 2013\Projects\Rational\Rational\obj\Debug\Rational.csprojResolveAssemblyReference.cache
+c:\users\виктор\documents\visual studio 2013\Projects\Rational\Rational\obj\Debug\Rational.exe
+c:\users\виктор\documents\visual studio 2013\Projects\Rational\Rational\obj\Debug\Rational.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Rational\Rational\bin\Debug\Rational.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Rational\Rational\obj\Debug\Rational.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Rational\Rational\obj\Debug\Rational.pdb
