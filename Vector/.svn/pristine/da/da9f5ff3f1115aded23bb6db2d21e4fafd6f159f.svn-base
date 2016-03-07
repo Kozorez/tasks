@@ -1,0 +1,425 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Rational
+{
+    class Rational
+    {
+        int sign;
+        int intPart;
+        int numerator;
+        int denominator;
+        
+        public Rational(int n, int d, int i = 0, int s = 1)
+        {
+            if (d != 0)
+            {
+                sign = s;
+                intPart = i;
+                numerator = n;
+                denominator = d;
+                GetMixedView();
+            }
+            else
+            {
+                throw new DivideByZeroException();
+            }
+        }
+        
+        public Rational()
+        {
+            sign = 1;
+            intPart = 0;
+            numerator = 0;
+            denominator = 1;
+        }
+        
+        void GetMixedView()
+        {
+            GetIntPart();
+            Cancellation();
+        }
+        
+        void Cancellation()
+        {
+            if (numerator != 0)
+            {
+                int m = denominator;
+                int n = numerator;
+                int ost = m % n;
+                while (ost != 0)
+                {
+                    m = n;
+                    n = ost;
+                    ost = m % n;
+                }
+                int nod = n;
+                if (nod != 1)
+                {
+                    numerator /= nod;
+                    denominator /= nod;
+                }
+            }
+        }
+        
+        void GetIntPart()
+        {
+            if (numerator >= denominator)
+            {
+                intPart += (numerator / denominator);
+                numerator %= denominator;
+            }
+        }
+        
+        public static Rational operator +(Rational ob1, Rational ob2)
+        {
+            Rational res = new Rational();
+            res.numerator = ob1.sign * (ob1.intPart * ob1.denominator + ob1.numerator) * ob2.denominator + ob2.sign * (ob2.intPart * ob2.denominator + ob2.numerator) * ob1.denominator;
+            res.denominator = ob1.denominator * ob2.denominator;
+            if (res.numerator < 0)
+            {
+                res.numerator *= -1;
+                res.sign = -1;
+            }
+            res.GetMixedView();
+            return res;
+        }
+        
+        public static Rational operator +(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                return new Rational(ob1.numerator, ob1.denominator, ob1.intPart, ob1.sign);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob1 + ob2;
+            return res;
+        }
+        
+        public static Rational operator +(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                return new Rational(ob1.numerator, ob1.denominator, ob1.intPart, ob1.sign);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob1 + ob2;
+            return res;
+        }
+        
+        public static Rational operator -(Rational ob1, Rational ob2)
+        {
+            Rational res = new Rational();
+            res.numerator = ob1.sign * (ob1.intPart * ob1.denominator + ob1.numerator) * ob2.denominator - ob2.sign * (ob2.intPart * ob2.denominator + ob2.numerator) * ob1.denominator;
+            res.denominator = ob1.denominator * ob2.denominator;
+            if (res.numerator < 0)
+            {
+                res.numerator *= -1;
+                res.sign = -1;
+            }
+            res.GetMixedView();
+            return res;
+        }
+        
+        public static Rational operator -(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                return new Rational(ob1.numerator, ob1.denominator, ob1.intPart, ob1.sign);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob1 - ob2;
+            return res;
+        }
+        
+        public static Rational operator -(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                return new Rational(ob1.numerator, ob1.denominator, ob1.intPart, ob1.sign * -1);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob2 - ob1;
+            return res;
+        }
+        
+        public static Rational operator *(Rational ob1, Rational ob2)
+        {
+            Rational res = new Rational();
+            res.numerator = ob1.sign * (ob1.intPart * ob1.denominator + ob1.numerator) * ob2.sign * (ob2.intPart * ob2.denominator + ob2.numerator);
+            res.denominator = ob1.denominator * ob2.denominator;
+            if (res.numerator < 0)
+            {
+                res.numerator *= -1;
+                res.sign = -1;
+            }
+            res.GetMixedView();
+            return res;
+        }
+        
+        public static Rational operator *(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                return new Rational(0, 1, 0, 1);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob1 * ob2;
+            return res;
+        }
+        
+        public static Rational operator *(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                return new Rational(0, 1, 0, 1);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob1 * ob2;
+            return res;
+        }
+        
+        public static Rational operator /(Rational ob1, Rational ob2)
+        {
+            Rational res = new Rational();
+            res.numerator = ob1.sign * (ob1.intPart * ob1.denominator + ob1.numerator) * ob2.denominator;
+            res.denominator = ob2.sign * (ob2.intPart * ob2.denominator + ob2.numerator) * ob1.denominator;
+            if (res.numerator < 0)
+            {
+                res.numerator *= -1;
+                res.sign = -1;
+                if (res.denominator < 0)
+                {
+                    res.denominator *= -1;
+                    res.sign = 1;
+                }
+            }
+            else if (res.denominator < 0)
+            {
+                res.denominator *= -1;
+                res.sign = -1;
+            }
+            res.GetMixedView();
+            return res;
+        }
+        
+        public static Rational operator /(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                throw new System.DivideByZeroException();
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob1 / ob2;
+            return res;
+        }
+        
+        public static Rational operator /(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                return new Rational(0, 1, 0, 1);
+            }
+            Rational ob2 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            Rational res = ob2 / ob1;
+            return res;
+        }
+        
+        public static bool operator ==(Rational ob1, Rational ob2)
+        {
+            Rational res = ob1 - ob2;
+            if (res.numerator == 0 && res.intPart == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        public static bool operator ==(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                Rational ob2 = new Rational(0, 1, 0, 1);
+                return (ob1 == ob2);
+            }
+            Rational ob3 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            return (ob1 == ob3);
+        }
+        
+        public static bool operator ==(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                Rational ob2 = new Rational(0, 1, 0, 1);
+                return (ob1 == ob2);
+            }
+            Rational ob3 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            return (ob1 == ob3);
+        }
+        
+        public static bool operator !=(Rational ob1, Rational ob2)
+        {
+            return (!(ob1 == ob2));
+        }
+        
+        public static bool operator !=(Rational ob1, int a)
+        {
+            return (!(ob1 == a));
+        }
+        
+        public static bool operator !=(int a, Rational ob1)
+        {
+            return (!(a == ob1));
+        }
+        
+        public static bool operator >(Rational ob1, Rational ob2)
+        {
+            Rational res = ob1 - ob2;
+            if (res.sign == 1)
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        public static bool operator >(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                Rational ob2 = new Rational(0, 1, 0, 1);
+                return (ob1 > ob2);
+            }
+            Rational ob3 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            return (ob1 > ob3);
+        }
+        
+        public static bool operator >(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                Rational ob2 = new Rational(0, 1, 0, 1);
+                return (ob1 > ob2);
+            }
+            Rational ob3 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            return (ob1 > ob3);
+        }
+        
+        public static bool operator <(Rational ob1, Rational ob2)
+        {
+            Rational res = ob1 - ob2;
+            if (res.sign == -1)
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        public static bool operator <(Rational ob1, int a)
+        {
+            if (a == 0)
+            {
+                Rational ob2 = new Rational(0, 1, 0, 1);
+                return (ob1 < ob2);
+            }
+            Rational ob3 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            return (ob1 < ob3);
+        }
+        
+        public static bool operator <(int a, Rational ob1)
+        {
+            if (a == 0)
+            {
+                Rational ob2 = new Rational(0, 1, 0, 1);
+                return (ob1 < ob2);
+            }
+            Rational ob3 = new Rational(0, 1, Math.Abs(a), a / Math.Abs(a));
+            return (ob1 < ob3);
+        }
+        
+        public static bool operator >=(Rational ob1, Rational ob2)
+        {
+            if (ob1 > ob2 || ob1 == ob2)
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        public static bool operator >=(Rational ob1, int a)
+        {
+            if (ob1 > a || ob1 == a)
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        public static bool operator >=(int a, Rational ob1)
+        {
+            if (a > ob1 || a == ob1)
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        public static bool operator <=(Rational ob1, Rational ob2)
+        {
+            if (ob1 < ob2 || ob1 == ob2)
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        public static bool operator <=(Rational ob1, int a)
+        {
+            if (ob1 < a || ob1 == a)
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        public static bool operator <=(int a, Rational ob1)
+        {
+            if (a < ob1 || a == ob1)
+            {
+                return true;
+            }
+            return false;
+        }
+        
+        public override bool Equals(object ob1)
+        {
+            return ob1 is Rational && this == (Rational)ob1;
+        }
+        
+        public override int GetHashCode()
+        {
+            return Tuple.Create(numerator, denominator, intPart, sign).GetHashCode();
+        }
+        
+        public void show()
+        {
+            Console.WriteLine(numerator);
+            Console.WriteLine(denominator);
+            Console.WriteLine(intPart);
+            Console.WriteLine(sign);
+        }
+        
+        static void Main(string[] args)
+        {
+            try
+            {}
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("ERROR!");
+            }
+            Console.ReadKey();
+        }
+    }
+}
