@@ -1,0 +1,9 @@
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Game of Life\Game of Life\bin\Debug\Game of Life.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Game of Life\Game of Life\bin\Debug\Game of Life.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Game of Life\Game of Life\bin\Debug\Game of Life.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Game of Life\Game of Life\obj\Debug\Game of Life.csprojResolveAssemblyReference.cache
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Game of Life\Game of Life\obj\Debug\Game of Life.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\k_r\Game of Life\Game of Life\obj\Debug\Game of Life.pdb
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Game of Life\Game of Life\bin\Debug\Game of Life.exe.config
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Game of Life\Game of Life\obj\Debug\Game of Life.exe
+C:\Users\Виктор\Documents\Visual Studio 2013\Projects\SVN\Game of Life\Game of Life\obj\Debug\Game of Life.pdb

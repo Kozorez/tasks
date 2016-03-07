@@ -1,0 +1,209 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Game_of_Life
+{
+    class Life
+    {
+        int[,] generation;
+        int[,] lastGeneration;
+        int _generationCount;
+        int rows;
+        int columns;
+
+        public int generationCount
+        {
+            get
+            {
+                return _generationCount;
+            }
+            set
+            {
+                _generationCount = value;
+            }
+        }
+
+        public Life(int[,] newGrid)
+        {
+            generation = (int[,])newGrid.Clone();
+            generationCount = 1;
+            rows = generation.GetLength(0);
+            columns = generation.GetLength(1);
+            lastGeneration = new int[rows, columns];
+        }
+
+        int Neighbours(int x, int y)
+        {
+            int count = 0;
+            if (x > 0 && y > 0)
+            {
+                if (generation[x - 1, y - 1] == 1)
+                {
+                    count++;
+                }
+            }
+            if (y > 0)
+            {
+                if (generation[x, y - 1] == 1)
+                {
+                    count++;
+                }
+            }
+            if (x < rows - 1 && y > 0)
+            {
+                if (generation[x + 1, y - 1] == 1)
+                {
+                    count++;
+                }
+            }
+            if (x > 0)
+            {
+                if (generation[x - 1, y] == 1)
+                {
+                    count++;
+                }
+            }
+            if (x < rows - 1)
+            {
+                if (generation[x + 1, y] == 1)
+                {
+                    count++;
+                }
+            }
+            if (x > 0 && y < columns - 1)
+            {
+                if (generation[x - 1, y + 1] == 1)
+                {
+                    count++;
+                }
+            }
+            if (y < columns - 1)
+            {
+                if (generation[x, y + 1] == 1)
+                {
+                    count++;
+                }
+            }
+            if (x < rows - 1 && y < columns - 1)
+            {
+                if (generation[x + 1, y + 1] == 1)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        void WriteNeighbours()
+        {
+            for (int x = 0; x < rows; x++)
+            {
+                for (int y = 0; y < columns; y++)
+                {
+                    Console.Write("{0}", Neighbours(x, y));
+                }
+                Console.WriteLine();
+            }
+        }
+
+        void ProcessGeneration()
+        {
+            int[,] nextGeneration = new int[rows, columns];
+            lastGeneration = (int[,])generation.Clone();
+            generationCount++;
+            for (int x = 0; x < rows; x++)
+            {
+                for (int y = 0; y < columns; y++)
+                {
+                    if (generation[x, y] == 0 && Neighbours(x, y) == 3)
+                    {
+                        nextGeneration[x, y] = 1;
+                    }
+                    if (generation[x, y] == 1 && (Neighbours(x, y) == 2 || Neighbours(x, y) == 3))
+                    {
+                        nextGeneration[x, y] = 1;
+                    }
+                }
+            }
+            generation = (int[,])nextGeneration.Clone();
+        }
+
+        void DrawGeneration()
+        {
+            for (int x = 0; x < rows; x++)
+            {
+                for (int y = 0; y < columns; y++)
+                {
+                    Console.Write("{0}", generation[x, y]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+
+        int AliveCells()
+        {
+            int count = 0;
+            for (int x = 0; x < rows; x++)
+            {
+                for (int y = 0; y < columns; y++)
+                {
+                    if (generation[x, y] == 1)
+                    {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+
+        static void Main(string[] args)
+        {
+            int[,] grid = new int[,]
+            {
+            { 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1},
+            { 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1},
+            { 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0},
+            { 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0},
+            { 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1},
+            { 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0},
+            { 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0},
+            { 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0},
+            { 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1},
+            { 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0},
+            };
+
+            Life lifeGrid = new Life(grid);
+            Console.WriteLine("Поколение 0");
+            lifeGrid.DrawGeneration();
+            Console.WriteLine();
+
+            while (lifeGrid.AliveCells() > 0)
+            {
+                string response;
+                Console.WriteLine();
+                Console.WriteLine("Поколение {0}", lifeGrid.generationCount);
+                lifeGrid.ProcessGeneration();
+                lifeGrid.DrawGeneration();
+                Console.WriteLine();
+                if (lifeGrid.AliveCells() == 0)
+                {
+                    Console.WriteLine("Все клетки погибли!");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("Нажмите <Enter>, чтобы продолжить или n<Enter>, чтобы выйти.");
+                    response = Console.ReadLine();
+                    if (response == "n" || response == "N")
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+}
