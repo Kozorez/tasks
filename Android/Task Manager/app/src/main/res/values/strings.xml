@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Task Manager</string>
+    <string name="add_your_note">Add Your Note</string>
+    <string name="text_view_text">Add your note here:</string>
+    <string name="add_note">Add note</string>
+    <string name="back_to_main_menu">Back to main menu</string>
+    <string name="text_view_1">TextView1</string>
+    <string name="text_string2">TextView2</string>
+    <string name="delete">Delete</string>
+    <string name="note_deleted">This note will be deleted permanently</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>>
+</resources>
